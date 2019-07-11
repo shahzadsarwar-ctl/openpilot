@@ -395,8 +395,8 @@ class CarInterface(object):
   # returns a car.CarState
   def update(self, c, can_strings):
     # ******************* do can recv *******************
-    self.cp.update_strings(int(sec_since_boot() * 1e9), can_strings)
-    self.cp_cam.update_strings(int(sec_since_boot() * 1e9), can_strings)
+    self.cp.update_strings(int(sec_since_boot() * 1e9), True)
+    canMonoTimes = []
 
     self.cp.update(int(sec_since_boot() * 1e9), False)
     #self.cp_cam.update(int(sec_since_boot() * 1e9), False) #Clarity
@@ -512,10 +512,6 @@ class CarInterface(object):
     # events
     events = []
 
-    if not self.CS.can_valid:
-      self.can_invalid_count += 1
-    else:
-      self.can_invalid_count = 0
 #Clarity
 #    if not self.CS.cam_can_valid and self.CP.enableCamera:
 #      self.cam_can_invalid_count += 1
