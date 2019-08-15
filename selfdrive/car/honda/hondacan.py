@@ -27,8 +27,6 @@ def get_pt_bus(car_fingerprint, is_panda_black):
 def get_lkas_cmd_bus(car_fingerprint, is_panda_black):
   return 2 if car_fingerprint in HONDA_BOSCH and not is_panda_black else 0
 
-
-def create_brake_command(packer, apply_brake, pump_on, pcm_override, pcm_cancel_cmd, fcw, idx, car_fingerprint, is_panda_black):
 #Clarity
 def make_can_msg(addr, dat, idx, alt):
   if idx is not None:
