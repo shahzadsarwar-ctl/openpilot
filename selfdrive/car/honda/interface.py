@@ -396,7 +396,6 @@ class CarInterface(object):
   def update(self, c, can_strings):
     # ******************* do can recv *******************
     self.cp.update_strings(int(sec_since_boot() * 1e9), True)
-    canMonoTimes = []
 
     self.cp.update(int(sec_since_boot() * 1e9), False)
     #self.cp_cam.update(int(sec_since_boot() * 1e9), False) #Clarity
