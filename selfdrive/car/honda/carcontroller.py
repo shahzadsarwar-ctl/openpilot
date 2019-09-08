@@ -71,7 +71,8 @@ def process_hud_alert(hud_alert):
   else:                             # any other ACC alert
     acc_alert = hud_alert[1]
 
-  return fcw_display, steer_required, acc_alert
+  #return fcw_display, steer_required, acc_alert
+  return 0, 0, 0
 
 
 HUDData = namedtuple("HUDData",
